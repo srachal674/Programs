@@ -10,49 +10,27 @@ project = int(input(f"Enter project grade: "))
 
 homework_ave = int(input(f"Enter homework grade: "))
 
-#This calculates the weighted test grade.
-def test(test_ave):
-    test_grade = test_ave * .50
-    return(test_grade)
-
-#This calculates the weighted project grade.
-def proj(project):
-    project_grade = project * .30
-    return(project_grade)
-
-#This calculates the weighted homework grade.
-def homework(homework_ave):
-    homework_grade = homework_ave * .20
-    return(homework_grade)
-
-#This is the students weighted grade in the class.
-def total(test, proj, homework):
-    total_score = test + proj + homework
-    return(total_score)
-
 # Calculate the total weighted grade
-total_score = total(test(test_ave), proj(project), homework(homework_ave))
+test_points = test_ave * 0.50
+project_points = project * 0.30
+homework_points = homework_ave * 0.20
 
-#This compares the weighted test average to the given parameter and returns the correct letter grade and number score percent.
-if test_ave >=90:
-    print(f"Test Average = {int(test_ave + 0.5)}%")
-elif test_ave >=80:
-    print(f"Test Average = {int(test_ave + 0.5)}%")
-elif test_ave >=70:
-    print(f"Test Average = {int(test_ave + 0.5)}%")
-elif test_ave >=60:
-    print(f"Test Average =  {int(test_ave + 0.5)}%")
-else:
-    print(f"Test Average = {int(test_ave + 0.5)}%")
+total_score = test_points + project_points + homework_points
 
-#This prints the students total weighted grade in the class.
-if total_score >=90:
-    print(f"Class Grade = A {int(total_score + 0.5)}%")
-elif total_score >=80:
-    print(f"Class Grade = B {int(total_score + 0.5)}%")
-elif total_score >=70:
-    print(f"Class Grade = C {int(total_score + 0.5)}%")
-elif total_score >=60:
-    print(f"Class Grade = D {int(total_score + 0.5)}%")
+test_ave = sum(test_scores) / 3
+test_weighted = test_ave * .50
+
+# determine letter grade
+if total_score >= 90:
+    letter = "A"
+elif total_score >= 80:
+    letter = "B"
+elif total_score >= 70:
+    letter = "C"
+elif total_score >= 60:
+    letter = "D"
 else:
-    print(f"Class Grade = F {int(total_score + 0.5)}%")
+    letter = "F"
+
+# print both together
+print(f"Final Grade: {round(total_score)}% ({letter})")
