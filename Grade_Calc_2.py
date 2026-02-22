@@ -19,7 +19,7 @@ homework_points = homework_ave * 0.20
 
 total_score = test_points + project_points + homework_points
 
-test_ave = sum(test_scores) / 3
+test_ave = sum(test_scores) / num_scores
 test_weighted = test_ave * .50
 
 # determine letter grade
