@@ -30,6 +30,9 @@ def total(test, proj, homework):
     total_score = test + proj + homework
     return(total_score)
 
+# Calculate the total weighted grade
+total_score = total(test(test_ave), proj(project), homework(homework_ave))
+
 #This compares the weighted test average to the given parameter and returns the correct letter grade and number score percent.
 if test(test_ave) >=90:
     print(f"Test Average = {int(test_ave + 0.5)}%")
@@ -43,13 +46,13 @@ else:
     print(f"Test Average = {int(test_ave + 0.5)}%")
 
 #This prints the students total weighted grade in the class.
-if total_score >=90:
+if total >=90:
     print(f"Class Grade = A {int(total_score + 0.5)}%")
-elif total_score >=80:
+elif total >=80:
     print(f"Class Grade = B {int(total_score + 0.5)}%")
-elif total_score >=70:
+elif total >=70:
     print(f"Class Grade = C {int(total_score + 0.5)}%")
-elif total_score >=60:
+elif total >=60:
     print(f"Class Grade = D {int(total_score + 0.5)}%")
 else:
     print(f"Class Grade = F {int(total_score + 0.5)}%")
