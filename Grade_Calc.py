@@ -43,13 +43,13 @@ else:
     print(f"Test Average = {int(test_ave + 0.5)}%")
 
 #This prints the students total weighted grade in the class.
-if total >=90:
+if total_score >=90:
     print(f"Class Grade = A {int(total_score + 0.5)}%")
-elif total >=80:
+elif total_score >=80:
     print(f"Class Grade = B {int(total_score + 0.5)}%")
-elif total >=70:
+elif total_score >=70:
     print(f"Class Grade = C {int(total_score + 0.5)}%")
-elif total >=60:
+elif total_score >=60:
     print(f"Class Grade = D {int(total_score + 0.5)}%")
 else:
     print(f"Class Grade = F {int(total_score + 0.5)}%")
