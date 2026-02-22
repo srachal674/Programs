@@ -1,7 +1,9 @@
+begin = int(input("How many test do you need to enter? "))
 test_scores = []
+num_scores = begin
 
-for g in range (3):
-    grade = int(input(f"Enter test grade{g+1}: "))
+for g in range (num_scores):
+    grade = int(input(f"Enter test grade {g+1}: "))
     test_scores.append(grade)
 
 test_ave = sum(test_scores)/3
