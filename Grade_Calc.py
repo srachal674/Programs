@@ -56,11 +56,3 @@ elif total_score >=60:
     print(f"Class Grade = D {int(total_score + 0.5)}%")
 else:
     print(f"Class Grade = F {int(total_score + 0.5)}%")
-
-test(test_ave)
-
-proj(project)
-
-homework(homework_ave)
-
-total(test, proj, homework)
