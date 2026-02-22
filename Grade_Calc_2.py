@@ -6,7 +6,7 @@ for g in range (num_scores):
     grade = int(input(f"Enter test grade {g+1}: "))
     test_scores.append(grade)
 
-test_ave = sum(test_scores)/3
+test_ave = sum(test_scores)/num_scores
 
 project = int(input(f"Enter project grade: "))
 
