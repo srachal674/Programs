@@ -36,10 +36,6 @@ homework_points = homework_ave * homework_weight
 
 total_score = test_points + project_points + homework_points
 
-"""test_ave = sum(test_scores) / num_scores
-test_weighted = test_ave * test_weight"""
-
-
 # determine letter grade
 if total_score >= 90:
     letter = "A"
