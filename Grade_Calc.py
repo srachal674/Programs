@@ -10,19 +10,23 @@ project = int(input(f"Enter project grade: "))
 
 homework_ave = int(input(f"Enter homework grade: "))
 
+#This calculates the weighted test grade.
 def test(test_ave):
     test_grade = test_ave * .50
     return(test_grade)
 
+#This calculates the weighted project grade.
 def proj(project):
     project_grade = project * .30
     return(project_grade)
 
+#This calculates the weighted homework grade.
 def homework(homework_ave):
     homework_grade = homework_ave * .20
     return(homework_grade)
 
-if test_ave >=90:
+#This compares the weighted test average to the given parameter and returns the correct letter grade and number score percent.
+if test(test_ave) >=90:
     print(f"Test = A {int(test_ave + 0.5)}%")
 elif test_ave >=80:
     print(f"Test = B {int(test_ave + 0.5)}%")
@@ -33,6 +37,7 @@ elif test_ave >=60:
 else:
     print(f"Test = F {int(test_ave + 0.5)}%")
 
+#This compares the weighted project grade to the given parameter and returns the correct letter grade and number score percent.
 if project >=90:
     print(f"Project = A {int(project + 0.5)}%")
 elif project >=80:
@@ -44,6 +49,7 @@ elif project >=60:
 else:
     print(f"Project = F {int(project + 0.5)}%")
 
+#This compares the weighted homework grade to the given parameter and returns the correct letter grade and number score percent.
 if homework_ave >=90:
     print(f"Homework = A {int(homework_ave + 0.5)}%")
 elif homework_ave >=80:
