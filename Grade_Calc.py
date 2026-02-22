@@ -27,7 +27,7 @@ def homework(homework_ave):
 
 #This is the students weighted grade in the class.
 def total(test, proj, homework):
-    total_score = sum(test proj homework)
+    total_score = test + proj + homework
     return(total_score)
 
 #This compares the weighted test average to the given parameter and returns the correct letter grade and number score percent.
