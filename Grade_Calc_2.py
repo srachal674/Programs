@@ -36,6 +36,11 @@ homework_points = homework_ave * homework_weight
 
 total_score = test_points + project_points + homework_points
 
+#This should be used if the user has no test scores.
+if begin ==0:
+    test_points = 0
+
+
 # determine letter grade
 if total_score >= 90:
     letter = "A"
