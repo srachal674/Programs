@@ -32,36 +32,24 @@ def total(test, proj, homework):
 
 #This compares the weighted test average to the given parameter and returns the correct letter grade and number score percent.
 if test(test_ave) >=90:
-    print(f"Test = A {int(test_ave + 0.5)}%")
+    print(f"Test Average = {int(test_ave + 0.5)}%")
 elif test_ave >=80:
-    print(f"Test = B {int(test_ave + 0.5)}%")
+    print(f"Test Average = {int(test_ave + 0.5)}%")
 elif test_ave >=70:
-    print(f"Test = C {int(test_ave + 0.5)}%")
+    print(f"Test Average = {int(test_ave + 0.5)}%")
 elif test_ave >=60:
-    print(f"Test = D {int(test_ave + 0.5)}%")
+    print(f"Test Average =  {int(test_ave + 0.5)}%")
 else:
-    print(f"Test = F {int(test_ave + 0.5)}%")
-
-#This compares the weighted project grade to the given parameter and returns the correct letter grade and number score percent.
-if project >=90:
-    print(f"Project = A {int(project + 0.5)}%")
-elif project >=80:
-    print(f"Project = B {int(project + 0.5)}%")
-elif project >=70:
-    print(f"Project = C {int(project + 0.5)}%")
-elif project >=60:
-    print(f"Project = D {int(project + 0.5)}%")
-else:
-    print(f"Project = F {int(project + 0.5)}%")
+    print(f"Test Average = {int(test_ave + 0.5)}%")
 
 #This prints the students total weighted grade in the class.
 if total >=90:
     print(f"Class Grade = A {int(total_score + 0.5)}%")
-elif homework_ave >=80:
+elif total >=80:
     print(f"Class Grade = B {int(total_score + 0.5)}%")
-elif homework_ave >=70:
+elif total >=70:
     print(f"Class Grade = C {int(total_score + 0.5)}%")
-elif homework_ave >=60:
+elif total >=60:
     print(f"Class Grade = D {int(total_score + 0.5)}%")
 else:
     print(f"Class Grade = F {int(total_score + 0.5)}%")
