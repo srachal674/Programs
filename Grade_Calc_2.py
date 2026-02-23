@@ -39,6 +39,7 @@ total_score = test_points + project_points + homework_points
 #This should be used if the user has no test scores.
 if begin ==0:
     test_points = 0
+    test_scores = 0
 
 
 # determine letter grade
