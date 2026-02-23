@@ -1,6 +1,10 @@
 #This gets the total number of tests from the user.
 begin = int(input("How many test do you need to enter? "))
 
+if begin == 0:
+    print("You must enter at least 1 test.")
+    quit()
+
 #This stores the number of test the user set so they can be used to control the test loop and calculate the test averge.
 num_scores = begin
 
@@ -35,12 +39,6 @@ project_points = project * project_weight
 homework_points = homework_ave * homework_weight
 
 total_score = test_points + project_points + homework_points
-
-#This should be used if the user has no test scores.
-if begin ==0:
-    test_points = 0
-    test_scores = 0
-
 
 # determine letter grade
 if total_score >= 90:
