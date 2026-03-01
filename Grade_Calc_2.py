@@ -20,12 +20,6 @@ project_weight = float(input("Enter max points for project: ")) / 100
 #This gets the weighted test percent from the user. 
 homework_weight = float(input("Enter max point value for homework: ")) / 100
 
-weight_sum = test_weight + project_weight + homework_weight
-if abs(weight_sum - 1.0) > 0.0001:
-    print(f"Your max points add to {weight_sum*100:.1f}, not 100.")
-    print("Please enter weights that add to 100 (example: 50, 30, 20).")
-    quit()
-    
 #This gathers the tests scores from the user based on their input number.
 for g in range (num_scores):
     grade = int(input(f"Enter test grade {g+1}: "))
