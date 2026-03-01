@@ -1,46 +1,42 @@
-#This gets the total number of tests from the user.
-begin = int(input("How many test do you need to enter? "))
+# 1) How many tests?
+num_scores = int(input("How many tests do you need to enter? "))
 
-if begin == 0:
+if num_scores <= 0:
     print("You must enter at least 1 test.")
-    quit()
+    raise SystemExit
 
-#This stores the number of test the user set so they can be used to control the test loop and calculate the test averge.
-num_scores = begin
+# 2) Get category max points (the slice of the 100-point total)
+# Example: Tests 50, Project 30, Homework 20
+test_max = float(input("Enter max point value for tests (e.g., 50): "))
+project_max = float(input("Enter max point value for project (e.g., 30): "))
+homework_max = float(input("Enter max point value for homework (e.g., 20): "))
 
-#This stores the input test scores.
+total_max = test_max + project_max + homework_max
+
+if total_max != 100:
+    print(f"Your point values add to {total_max:.0f}, not 100. Try again.")
+    raise SystemExit
+
+# 3) Gather test scores
 test_scores = []
-
-#This gets the weighted test percent from the user. 
-test_weight = float(input("Enter max point value for tests: ")) / 100
-
-#This gets the weighted project percent from the user.
-project_weight = float(input("Enter max points for project: ")) / 100
-
-#This gets the weighted test percent from the user. 
-homework_weight = float(input("Enter max point value for homework: ")) / 100
-
-#This gathers the tests scores from the user based on their input number.
-for g in range (num_scores):
-    grade = int(input(f"Enter test grade {g+1}: "))
+for i in range(num_scores):
+    grade = float(input(f"Enter test grade {i+1}: "))
     test_scores.append(grade)
 
-#This calculates their average test score using the number of test they set and the scores they entered.
-test_ave = sum(test_scores)/num_scores
+test_ave = sum(test_scores) / num_scores
 
-#This takes in the project score from the user.
-project = int(input(f"Enter project grade: "))
+# 4) Get project + homework grades
+project = float(input("Enter project grade: "))
+homework = float(input("Enter homework grade: "))
 
-homework_ave = int(input(f"Enter homework grade: "))
-
-# Calculate the total weighted grade
-test_points = test_ave * test_weight
-project_points = project * project_weight
-homework_points = homework_ave * homework_weight
+# 5) Convert each category to its point slice out of 100
+test_points = test_ave * (test_max / 100)
+project_points = project * (project_max / 100)
+homework_points = homework * (homework_max / 100)
 
 total_score = test_points + project_points + homework_points
 
-# determine letter grade
+# 6) Letter grade from final total (0–100 scale)
 if total_score >= 90:
     letter = "A"
 elif total_score >= 80:
@@ -52,5 +48,4 @@ elif total_score >= 60:
 else:
     letter = "F"
 
-# print both together
 print(f"Final Grade: {round(total_score)}% ({letter})")
